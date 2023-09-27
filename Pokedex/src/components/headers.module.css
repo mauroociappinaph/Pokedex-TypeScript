@@ -1,0 +1,44 @@
+/* headers.module.css */
+
+/* Estilos generales para el encabezado */
+.header {
+    background-color: #333;
+    color: white;
+    padding: 20px; /* Mayor espacio en el encabezado */
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    min-height: 100px; /* Establecer una altura mínima para el encabezado */
+  }
+  
+  /* Contenedor para el título y el cuadro de búsqueda */
+  .container {
+    background-color: #f44336; /* Usar el color primario */
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar horizontalmente dentro del contenedor */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agregar una sombra */
+  }
+  
+  /* Estilos para el título */
+  .title {
+    font-size: 36px; /* Tamaño de fuente más grande */
+    margin: 0;
+    color: white; /* Texto en color blanco */
+  }
+  
+  /* Estilos para el cuadro de búsqueda */
+  .input {
+    width: 100%;
+    padding: 10px; /* Mayor espacio en el cuadro de búsqueda */
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sutil sombra */
+    margin-top: 20px; /* Espacio superior */
+  }
+  

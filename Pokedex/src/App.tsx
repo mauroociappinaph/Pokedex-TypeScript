@@ -3,7 +3,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
 
 
 import './App.css';
-import { Items, Pokemon, Pokemons } from "./pages";
+import { Items, Pokemon, Pokemons } from "./pages/index";
 
 function App() {
   return (

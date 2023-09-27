@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+# Pokedex-TypeScript
+## Pokedex
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+### Funcionalidad de la App:
 
-In the project directory, you can run:
+- **Pokedex Moderna**: La aplicación es una versión moderna de la Pokedex, una herramienta utilizada en el mundo Pokémon para obtener información sobre diferentes Pokémon.
 
-### `npm start`
+- **Interfaz de Usuario Moderna**: La aplicación cuenta con un diseño web moderno que proporciona a los usuarios una experiencia atractiva y fácil de usar.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Información de Pokémon**: La aplicación permite a los usuarios buscar y acceder a información detallada sobre diferentes Pokémon, como estadísticas, tipos, habilidades y más.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Navegación de Páginas**: Se utiliza React Router Dom v6 para crear una navegación de página única (SPA), lo que significa que los usuarios pueden moverse entre diferentes secciones de la aplicación sin tener que cargar completamente la página.
 
-### `npm test`
+- **Uso de Hooks de React**: La aplicación utiliza hooks de React como `useState` y `useEffect` para gestionar el estado y los efectos secundarios, lo que mejora la eficiencia y el rendimiento.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Consumo de API Externas**: La aplicación realiza solicitudes a dos API externas diferentes para obtener datos sobre los Pokémon. Esto significa que la aplicación puede mostrar información actualizada y precisa sobre los Pokémon.
 
-### `npm run build`
+- **Uso de TypeScript**: TypeScript se utiliza junto con React para agregar tipos estáticos a la aplicación. Esto ayuda a evitar errores comunes de programación y a mejorar la calidad del código.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Gestión de Estilos con CSS Modules**: CSS Modules se utilizan para gestionar los estilos de la aplicación. Esto permite una organización más limpia y modular de los estilos y evita conflictos de nombres de clase.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Tecnologías Utilizadas:
 
-### `npm run eject`
+- **React**: La base de la aplicación, utilizada para crear componentes y gestionar la interfaz de usuario de forma eficiente.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **React Router Dom v6**: Utilizado para el enrutamiento y la navegación entre páginas de la aplicación.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **TypeScript**: Añade tipos estáticos al código de React, lo que mejora la calidad del código y facilita el mantenimiento.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- **Hooks de React**: Se utilizan para gestionar el estado y los efectos secundarios en la aplicación.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **APIs Externas**: La aplicación hace solicitudes a dos API externas diferentes para obtener datos sobre los Pokémon.
 
-## Learn More
+- **CSS Modules**: Utilizados para administrar los estilos de la aplicación de manera modular y organizada.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+By MAUROO CIAPPINA

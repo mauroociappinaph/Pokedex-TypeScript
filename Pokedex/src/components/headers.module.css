@@ -15,12 +15,13 @@
   /* Contenedor para el título y el cuadro de búsqueda */
   .container {
     background-color: #f44336; /* Usar el color primario */
-    padding: 20px;
+    padding: 40px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center; /* Centrar horizontalmente dentro del contenedor */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agregar una sombra */
+    width: 60%;
   }
   
   /* Estilos para el título */

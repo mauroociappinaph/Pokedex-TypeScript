@@ -1,0 +1,56 @@
+/* Pokemons.module.css */
+.header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  /* Estiliza los enlaces de manera más llamativa */
+  .link {
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    border-radius: 8px;
+    padding: 1rem;
+    transition: transform 0.2s ease-in-out;
+    text-align: center;
+  }
+  
+  .link:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .link img {
+    width: 60px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    margin-bottom: 1rem; /* Añade un espacio entre la imagen y el texto */
+  }
+  
+  .link div {
+    margin-top: 0.5rem;
+  }
+  
+  .link span {
+    font-weight: bold;
+  }
+  

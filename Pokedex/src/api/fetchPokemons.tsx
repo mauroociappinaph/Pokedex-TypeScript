@@ -1,5 +1,5 @@
 // const url = "https://unpkg.com/pokemons@1.1.0/pokemons.json"
-
+import { formatPokemonName } from "../utils/utils"
 export async function fetchPokemons(){
     const response = await fetch("https://unpkg.com/pokemons@1.1.0/pokemons.json");
    
@@ -13,7 +13,7 @@ export async function fetchPokemons(){
         return {
             name: pokemon.name,
             id: pokemon.id,
-            image: `https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemon.name}.gif`,
+            image: `https://img.pokemondb.net/sprites/black-white/anim/normal/${formatPokemonName(pokemon.name)}.gif`,
         };
     });
     const uniquePokemons = pokemons.filter(

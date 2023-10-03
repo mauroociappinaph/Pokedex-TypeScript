@@ -4,7 +4,10 @@
     color: white;
     padding: 20px;
     display: flex;
-    justify-content: space-around; /* Distribuir los elementos horizontalmente */
+    justify-content: space-around;
+    position: fixed;
+    /* 
+     /* Distribuir los elementos horizontalmente */
     align-items: center; /* Centrar verticalmente */
   }
   

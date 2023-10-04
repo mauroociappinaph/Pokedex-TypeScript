@@ -7,12 +7,14 @@
   }
   
   .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Divide el contenedor en tres columnas de igual ancho */
+    justify-content: center; /* Centra el contenido horizontalmente en cada columna */
+    align-items: center; /* Centra el contenido verticalmente en el centro del contenedor */
+    gap: 1rem; /* Espaciado entre las columnas */
     padding: 2rem;
   }
+  
   
   .container {
     display: flex;

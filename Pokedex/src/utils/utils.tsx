@@ -1,3 +1,5 @@
+
+
 export function formatPokemonName(name: string): string {
     if (name.includes("♀")) {
         return name.replace("♀", "-f");
@@ -11,3 +13,4 @@ export function formatPokemonName(name: string): string {
         return name; // Corregido el último else y eliminado el bloque de llaves innecesario
     }
 }
+

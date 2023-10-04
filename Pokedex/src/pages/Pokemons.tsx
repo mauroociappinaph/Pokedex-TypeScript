@@ -1,14 +1,31 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Headers from "../components/Headers";
 import Footer from "../components/Footer";
 import styles from "./pokemons.module.css"; // Importa los estilos CSS modules
 import { fetchPokemons } from '../api/fetchPokemons';
 
+
 interface Pokemon {
-  id: number;
+  id: string;
   name: string;
   image: string;
+  types: string[];
+}
+
+// Función para eliminar duplicados de la lista de Pokémon
+function removeDuplicates(pokemons: Pokemon[]): Pokemon[] {
+  const uniquePokemons: Pokemon[] = [];
+  const seenIds = new Set<string>();
+
+  for (const pokemon of pokemons) {
+    if (!seenIds.has(pokemon.id)) {
+      seenIds.add(pokemon.id);
+      uniquePokemons.push(pokemon);
+    }
+  }
+
+  return uniquePokemons;
 }
 
 const Pokemons = () => {
@@ -19,7 +36,10 @@ const Pokemons = () => {
     const fetchAllPokemons = async () => {
       try {
         const allPokemons = await fetchPokemons();
-        setPokemons(allPokemons);
+        console.log("All Pokemons:", allPokemons); // Agrega este console.log
+        const uniquePokemons = removeDuplicates(allPokemons); // Llama a la función para eliminar duplicados
+        console.log("Unique Pokemons:", uniquePokemons)
+        setPokemons(uniquePokemons);
       } catch (error) {
         console.error("Error fetching Pokemon data:", error);
       }
@@ -27,21 +47,27 @@ const Pokemons = () => {
     fetchAllPokemons();
   }, []);
 
+
   return (
     <div className={styles.app}>
       <Headers query={query} setQuery={setQuery} />
 
       <nav className={styles.main}>
-        {pokemons.slice(0, 152).map((pokemon) => (
-          <Link to={`/pokemons/${pokemon.name.toLowerCase()}`} 
-          className={styles.link} key={pokemon.id}>
-            <img src={pokemon.image} alt={pokemon.name} />
-            <div className={styles.container}>
-              <span className={styles.linkText}>{pokemon.name}</span>
-              <span>{pokemon.id}</span>
-            </div>
-          </Link>
-        ))}
+      {pokemons.slice(0, 152).map((pokemon) => (
+  <Link
+    to={`/pokemons/${pokemon.name.toLowerCase()}`}
+    className={styles.link}
+    key={pokemon.id} // Agrega un atributo 'key' único aquí
+  >
+    <img src={pokemon.image} alt={pokemon.name} />
+    <div className={styles.container}>
+      <span className={styles.linkText}>{pokemon.name}</span>
+      <p>{pokemon.types}</p>
+      <span>{pokemon.id}</span>
+    </div>
+  </Link>
+))}
+
       </nav>
 
       <Footer />

@@ -16,7 +16,7 @@ interface Pokemon {
   types: string[]; // Un arreglo de tipos de Pokémon
 }
 
-export async function fetchPokemons(limit: number = 150): Promise<Pokemon[]> {
+export async function fetchPokemons(limit: number = 200): Promise<Pokemon[]> {
   const response = await fetch("https://unpkg.com/pokemons@1.1.0/pokemons.json");
 
   if (!response.ok) {

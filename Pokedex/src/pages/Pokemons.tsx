@@ -16,11 +16,11 @@ interface Pokemon {
 // Función para eliminar duplicados de la lista de Pokémon
 function removeDuplicates(pokemons: Pokemon[]): Pokemon[] {
   const uniquePokemons: Pokemon[] = [];
-  const seenIds = new Set<string>();
+  const seenNames: Set<string> = new Set();
 
   for (const pokemon of pokemons) {
-    if (!seenIds.has(pokemon.id)) {
-      seenIds.add(pokemon.id);
+    if (!seenNames.has(pokemon.name)) {
+      seenNames.add(pokemon.name);
       uniquePokemons.push(pokemon);
     }
   }
@@ -53,7 +53,7 @@ const Pokemons = () => {
       <Headers query={query} setQuery={setQuery} />
 
       <nav className={styles.main}>
-      {pokemons.slice(0, 152).map((pokemon) => (
+      {pokemons.slice(0, 200).map((pokemon) => (
   <Link
     to={`/pokemons/${pokemon.name.toLowerCase()}`}
     className={styles.link}

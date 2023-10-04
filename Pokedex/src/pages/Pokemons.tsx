@@ -13,23 +13,21 @@ interface Pokemon {
   types: string[];
 }
 
-// Función para eliminar duplicados de la lista de Pokémon
-function removeDuplicates(pokemons: Pokemon[]): Pokemon[] {
-  const uniquePokemons: Pokemon[] = [];
+function removeDuplicatePokemons(pokemonList: Pokemon[]): Pokemon[] {
+  const uniquePokemonList: Pokemon[] = [];
   const seenNames: Set<string> = new Set();
 
-  for (const pokemon of pokemons) {
+  for (const pokemon of pokemonList) {
     if (!seenNames.has(pokemon.name)) {
       seenNames.add(pokemon.name);
-      uniquePokemons.push(pokemon);
+      uniquePokemonList.push(pokemon);
     }
   }
 
-  return uniquePokemons;
+  return uniquePokemonList;
 }
-
 const Pokemons = () => {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("")
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
 
   useEffect(() => {
@@ -37,7 +35,7 @@ const Pokemons = () => {
       try {
         const allPokemons = await fetchPokemons();
         console.log("All Pokemons:", allPokemons); // Agrega este console.log
-        const uniquePokemons = removeDuplicates(allPokemons); // Llama a la función para eliminar duplicados
+        const uniquePokemons = removeDuplicatePokemons(allPokemons); // Llama a la función para eliminar duplicados
         console.log("Unique Pokemons:", uniquePokemons)
         setPokemons(uniquePokemons);
       } catch (error) {

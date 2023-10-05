@@ -38,7 +38,11 @@ const Pokemons = () => {
         const allPokemons = await fetchPokemons();
         const uniquePokemons = removeDuplicatePokemons(allPokemons);
         setPokemons(uniquePokemons);
-        setIsLoading(false); // Actualiza el estado isLoading a false cuando los Pokémon se hayan cargado
+       // Simula un tiempo de carga de 3 segundos antes de mostrar los Pokémon
+       setTimeout(() => {
+        setIsLoading(false);
+      }, 3000);
+
       } catch (error) {
         console.error("Error fetching Pokemon data:", error);
       }

@@ -28,6 +28,7 @@
   /* Estiliza los enlaces de manera más llamativa */
   .link {
     text-decoration: none;
+    font-size: 1.2rem;
     color: var(--text-color);
     display: flex;
     flex-direction: column;

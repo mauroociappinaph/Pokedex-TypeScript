@@ -26,18 +26,19 @@ function removeDuplicatePokemons(pokemonList: Pokemon[]): Pokemon[] {
 
   return uniquePokemonList;
 }
+
 const Pokemons = () => {
-  const [query, setQuery] = useState("")
+  const [query, setQuery] = useState("");
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+  const [isLoading, setIsLoading] = useState(true); // Agrega el estado isLoading
 
   useEffect(() => {
     const fetchAllPokemons = async () => {
       try {
         const allPokemons = await fetchPokemons();
-        console.log("All Pokemons:", allPokemons); // Agrega este console.log
-        const uniquePokemons = removeDuplicatePokemons(allPokemons); // Llama a la función para eliminar duplicados
-        console.log("Unique Pokemons:", uniquePokemons)
+        const uniquePokemons = removeDuplicatePokemons(allPokemons);
         setPokemons(uniquePokemons);
+        setIsLoading(false); // Actualiza el estado isLoading a false cuando los Pokémon se hayan cargado
       } catch (error) {
         console.error("Error fetching Pokemon data:", error);
       }
@@ -45,28 +46,31 @@ const Pokemons = () => {
     fetchAllPokemons();
   }, []);
 
-
   return (
     <div className={styles.app}>
       <Headers query={query} setQuery={setQuery} />
 
-      <nav className={styles.main}>
-      {pokemons.slice(0, 200).map((pokemon) => (
-  <Link
-    to={`/pokemons/${pokemon.name.toLowerCase()}`}
-    className={styles.link}
-    key={pokemon.id} // Agrega un atributo 'key' único aquí
-  >
-    <img src={pokemon.image} alt={pokemon.name} />
-    <div className={styles.container}>
-      <span className={styles.linkText}>{pokemon.name}</span>
-      <p>{pokemon.types}</p>
-      <span>{pokemon.id}</span>
-    </div>
-  </Link>
-))}
-
-      </nav>
+      {/* Muestra el loader mientras los Pokémon se están cargando */}
+      {isLoading ? (
+        <h1 className={styles.loader}>Loading...</h1>
+      ) : (
+        <nav className={styles.main}>
+          {pokemons.slice(0, 200).map((pokemon) => (
+            <Link
+              to={`/pokemons/${pokemon.name.toLowerCase()}`}
+              className={styles.link}
+              key={pokemon.id}
+            >
+              <img src={pokemon.image} alt={pokemon.image} />
+              <div className={styles.container}>
+                <span className={styles.linkText}>{pokemon.name}</span>
+                <p>{pokemon.types.join(" ")}</p>
+                <span>{pokemon.id}</span>
+              </div>
+            </Link>
+          ))}
+        </nav>
+      )}
 
       <Footer />
     </div>

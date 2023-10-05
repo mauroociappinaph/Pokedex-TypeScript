@@ -1,4 +1,5 @@
 import { formatPokemonName } from "../utils/utils";
+import axios from 'axios';
 
 interface PokemonData {
   name: string;
@@ -16,17 +17,19 @@ interface Pokemon {
   types: string[]; // Un arreglo de tipos de Pokémon
 }
 
-export async function fetchPokemons(limit: number = 200): Promise<Pokemon[]> {
-  const response = await fetch("https://unpkg.com/pokemons@1.1.0/pokemons.json");
 
-  if (!response.ok) {
+
+export async function fetchPokemons(limit: number = 200): Promise<Pokemon[]> {
+  const response = await axios.get("https://unpkg.com/pokemons@1.1.0/pokemons.json");
+
+  if (response.status !== 200) {
     throw new Error(response.statusText);
   }
 
-  const data = await response.json();
+  const data = response.data;
   const results: PokemonData[] = data.results.slice(0, limit);
 
-  let index = 0; // Inicializa el índice
+  let index = 0;
 
   const pokemons: Pokemon[] = results.map((pokemonData: PokemonData) => {
     console.log(`Creating Pokemon: ${pokemonData.name}`);
@@ -34,9 +37,9 @@ export async function fetchPokemons(limit: number = 200): Promise<Pokemon[]> {
       name: pokemonData.name,
       id: (index + 1).toString(),
       image: pokemonData.sprites.animated,
-      types: pokemonData.type, // Mapea los tipos de Pokémon
+      types: pokemonData.type,
     };
-    index++; // Incrementa el índice para el próximo Pokémon
+    index++;
     return pokemon;
   });
 

@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 import styles from "./headers.module.css";
 
 interface HeadersProps {
@@ -7,9 +7,15 @@ interface HeadersProps {
 }
 
 const Headers: React.FC<HeadersProps> = ({ query, onChange }) => {
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value);
     onChange(event);
   };
+
+
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -18,8 +24,8 @@ const Headers: React.FC<HeadersProps> = ({ query, onChange }) => {
           className={styles.input}
           placeholder="Search Pokemon"
           type="text"
-          value={query}
-          onChange={handleChange} // Agrega la función onChange aquí
+          value={searchQuery}
+          onChange={handleSearchChange} // Agrega la función onChange aquí
         />
       </div>
     </header>

@@ -1,15 +1,15 @@
-/* Headers.js */
 
 import styles from "./headers.module.css";
 
-type HeaderProps = {
-    query: string;
-    setQuery: (query: string) => void;
+interface HeadersProps {
+  query: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Headers = ({query , setQuery} : HeaderProps) => {
-
-
+const Headers: React.FC<HeadersProps> = ({ query, onChange }) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    onChange(event);
+  };
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -19,7 +19,7 @@ const Headers = ({query , setQuery} : HeaderProps) => {
           placeholder="Search Pokemon"
           type="text"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={handleChange} // Agrega la función onChange aquí
         />
       </div>
     </header>

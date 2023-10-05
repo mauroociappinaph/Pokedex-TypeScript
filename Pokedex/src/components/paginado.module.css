@@ -1,0 +1,17 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: .5rem    ;
+}
+
+.pagination-item {
+  padding: 5px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.pagination-item.active {
+  background-color: #ccc;
+}

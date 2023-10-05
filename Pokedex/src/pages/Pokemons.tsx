@@ -33,6 +33,15 @@ const Pokemons = () => {
   const [query, setQuery] = useState("");
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
   const [isLoading, setIsLoading] = useState(true); // Agrega el estado isLoading
+  const [currentPage, setCurrentPage] = useState(1); // Agrega el estado de la página actual
+
+ 
+
+  const handlePageChange = (page: number) => {
+    
+    setCurrentPage(page);
+
+  }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);

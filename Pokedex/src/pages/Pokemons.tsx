@@ -4,6 +4,7 @@ import Headers from "../components/Headers";
 import Footer from "../components/Footer";
 import styles from "./pokemons.module.css"; // Importa los estilos CSS modules
 import { fetchPokemons } from '../api/fetchPokemons';
+import Pagination from "../components/paginado";
 
 
 interface Pokemon {
@@ -31,6 +32,12 @@ const Pokemons = () => {
   const [query, setQuery] = useState("");
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
   const [isLoading, setIsLoading] = useState(true); // Agrega el estado isLoading
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // Función para manejar el cambio de página
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
 
   useEffect(() => {
     const fetchAllPokemons = async () => {
@@ -50,6 +57,9 @@ const Pokemons = () => {
     fetchAllPokemons();
   }, []);
 
+  const itemsPerPage = 9; // Número de elementos por página
+  const totalPages = Math.ceil(pokemons.length / itemsPerPage); // Cálculo del número total de páginas
+
   return (
     <div className={styles.app}>
       <Headers query={query} setQuery={setQuery} />
@@ -59,7 +69,7 @@ const Pokemons = () => {
         <h1 className={styles.loader}>Loading...</h1>
       ) : (
         <nav className={styles.main}>
-          {pokemons.slice(0, 200).map((pokemon) => (
+          {pokemons.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map((pokemon) => (
             <Link
               to={`/pokemons/${pokemon.name.toLowerCase()}`}
               className={styles.link}
@@ -75,6 +85,13 @@ const Pokemons = () => {
           ))}
         </nav>
       )}
+      
+      {/* Muestra el componente de paginación */}
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+      />
 
       <Footer />
     </div>

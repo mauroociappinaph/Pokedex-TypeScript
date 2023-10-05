@@ -64,7 +64,9 @@ const Pokemons = () => {
     fetchAllPokemons();
   }, []);
 
-
+  const filteredPokemons = pokemons.filter((pokemon) => {
+    return pokemon.name.toLowerCase().includes(query.toLowerCase());
+  });
 
 
   const itemsPerPage = 9; // Número de elementos por página
@@ -79,7 +81,7 @@ const Pokemons = () => {
         <h1 className={styles.loader}>Loading...</h1>
       ) : (
         <nav className={styles.main}>
-          {pokemons.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map((pokemon) => (
+          {filteredPokemons.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map((pokemon) => (
             <Link
               to={`/pokemons/${pokemon.name.toLowerCase()}`}
               className={styles.link}

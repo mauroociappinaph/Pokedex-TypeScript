@@ -7,6 +7,7 @@ import { fetchPokemons } from '../api/fetchPokemons';
 import Pagination from "../components/paginado";
 
 
+
 interface Pokemon {
   id: string;
   name: string;
@@ -32,10 +33,6 @@ const Pokemons = () => {
   const [query, setQuery] = useState("");
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
   const [isLoading, setIsLoading] = useState(true); // Agrega el estado isLoading
-  const [currentPage, setCurrentPage] = useState(1); // Agrega la declaración de la variable currentPage
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-  };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
@@ -57,6 +54,9 @@ const Pokemons = () => {
     };
     fetchAllPokemons();
   }, []);
+
+
+
 
   const itemsPerPage = 9; // Número de elementos por página
   const totalPages = Math.ceil(pokemons.length / itemsPerPage); // Cálculo del número total de páginas

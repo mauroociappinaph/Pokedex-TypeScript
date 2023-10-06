@@ -1,5 +1,4 @@
-/* Crear estilos para el componente Pokemon */
-
+/* Estilos base que aplicarán para todos los tamaños de pantalla */
 .main {
     background-image: url("../assets/fondo.jpg");
     background-repeat: no-repeat;
@@ -7,71 +6,63 @@
     background-size: cover;
     height: 100vh;
     display: flex;
-   
+  }
   
-}
-/* Contenedor principal */
-.container {
+  /* Contenedor principal */
+  .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #333;
   }
-
-  .container_button_title {
-    background-color: rebeccapurple
-  }
-
+  
   /* Botón de regreso */
-.button {
+  .button {
     background-color: #007bff;
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
   }
+  
   .button:hover {
     background-color: #0069d9;
   }
-
+  
   /* Título */
-.title {
+  .title {
     font-size: 2rem;
     text-align: center;
     margin-top: 20px;
     color: white;
   }
-
+  
+  /* Contenedor de tarjeta */
   .container_card {
     background-color: #fff;
     border-radius: 8px;
     padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width: 450px;
-    height: 550px;
+    width: 100%; /* Haz que la tarjeta ocupe todo el ancho */
+    max-width: 450px; /* Establece un ancho máximo para tabletas */
+    max-height: 550px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-
   }
-
-
-
+  
   /* Contenedor de la imagen */
-.container_img {
+  .container_img {
     margin-top: 20px;
-   
   }
-
+  
   /* Imagen */
-.img {
+  .img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
@@ -84,9 +75,9 @@
     color: #333;
     margin-top: 20px;
   }
-
+  
   /* Tipo del Pokémon */
-.type {
+  .type {
     font-size: 16px;
     color: #666;
     margin-top: 8px;
@@ -100,7 +91,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-
     width: 100%;
     background-color: #fff;
   }
@@ -110,11 +100,9 @@
     font-size: 16px;
     color: #333;
   }
-
-
-
+  
   /* Estilos para las estadísticas, como HP, Ataque, Defensa y Movimientos */
-.container_span_hd {
+  .container_span_hd {
     margin-top: 10px;
   }
   
@@ -124,5 +112,33 @@
     font-weight: bold;
     color: #007bff;
     margin-right: 10px;
+  }
+  
+  /* Media query para tamaños de pantalla más pequeños, como tabletas */
+  @media (max-width: 768px) {
+    /* Modifica aquí tus estilos para adaptarlos a tabletas */
+    .container_card {
+      max-width: 100%; /* Haz que la tarjeta ocupe todo el ancho de la pantalla */
+    }
+  
+    .name {
+      font-size: 24px; /* Reduce el tamaño del nombre para tabletas */
+    }
+  
+    /* Agrega otras modificaciones según sea necesario */
+  }
+  
+  /* Media query para tamaños de pantalla aún más pequeños, como dispositivos móviles */
+  @media (max-width: 480px) {
+    /* Modifica aquí tus estilos para adaptarlos a dispositivos móviles */
+    .container_card {
+      max-width: 100%; /* Haz que la tarjeta ocupe todo el ancho de la pantalla */
+    }
+  
+    .name {
+      font-size: 20px; /* Reduce aún más el tamaño del nombre para dispositivos móviles */
+    }
+  
+    /* Agrega otras modificaciones según sea necesario */
   }
   

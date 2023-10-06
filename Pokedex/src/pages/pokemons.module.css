@@ -1,76 +1,82 @@
-/* Pokemons.module.css */
+/* Estilos base */
 .header {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  .main {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Divide el contenedor en tres columnas de igual ancho */
-    justify-content: center; /* Centra el contenido horizontalmente en cada columna */
-    align-items: center; /* Centra el contenido verticalmente en el centro del contenedor */
-    gap: 1rem; /* Espaciado entre las columnas */
-    padding: 2rem;
-  }
-  
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1rem;
- 
-  }
-  /* Estiliza los enlaces de manera más llamativa */
-  .link {
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: red;
-    background-image:
-      linear-gradient(
-        red, #f06d06
-      );
-    border-radius: 8px;
-    padding: 1rem;
-    transition: transform 0.2s ease-in-out;
-    text-align: center;
-  }
-  
-  .link:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .link img {
-    width: 60px; /* Ajusta el tamaño de la imagen según tus necesidades */
-    margin-bottom: 1rem; /* Añade un espacio entre la imagen y el texto */
-  }
-  
-  .link div {
-    margin-top: 0.5rem;
-  }
-  
-  .link span {
-    font-weight: bold;
-  }
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 1rem;
+  text-align: center;
+}
 
-  .loader {
-    border: 16px solid #f3f3f3;
-    border-top: 16px solid #3498db;
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
-    margin: auto;
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Divide el contenedor en tres columnas de igual ancho */
+  justify-content: center; /* Centra el contenido horizontalmente en cada columna */
+  align-items: center; /* Centra el contenido verticalmente en el centro del contenedor */
+  gap: 1rem; /* Espaciado entre las columnas */
+  padding: 2rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Estiliza los enlaces de manera más llamativa */
+.link {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: 	rgb(220, 20, 60);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: transform 0.2s ease-in-out;
+  text-align: center;
+}
+
+.link:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.link img {
+  width: 60px; /* Ajusta el tamaño de la imagen según tus necesidades */
+  margin-bottom: 1rem; /* Añade un espacio entre la imagen y el texto */
+}
+
+.link div {
+  margin-top: 0.5rem;
+}
+
+.link span {
+  font-weight: bold;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+}
+
+/* Media query para tabletas */
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr 1fr; /* Cambia a dos columnas en tabletas */
   }
-  
- 
-  
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 480px) {
+  .main {
+    grid-template-columns: 1fr; /* Cambia a una columna en dispositivos móviles */
+  }
+}

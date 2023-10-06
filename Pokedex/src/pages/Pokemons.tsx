@@ -83,10 +83,10 @@ const Pokemons = () => {
         <nav className={styles.main}>
           {filteredPokemons.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map((pokemon) => (
             <Link
-              to={`/pokemons/${pokemon.name.toLowerCase()}`}
-              className={styles.link}
-              key={pokemon.id}
-            >
+  to={`/pokemons/${pokemon.name.toLowerCase()}`}
+  className={styles.link}
+  key={pokemon.id}
+>
               <img src={pokemon.image} alt={pokemon.image} />
               <div className={styles.container}>
                 <span className={styles.linkText}>{pokemon.name}</span>

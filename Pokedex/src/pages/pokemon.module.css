@@ -1,0 +1,128 @@
+/* Crear estilos para el componente Pokemon */
+
+.main {
+    background-image: url("../assets/fondo.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+   
+  
+}
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .container_button_title {
+    background-color: rebeccapurple
+  }
+
+  /* Botón de regreso */
+.button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .button:hover {
+    background-color: #0069d9;
+  }
+
+  /* Título */
+.title {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+  }
+
+  .container_card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 450px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
+  }
+
+
+
+  /* Contenedor de la imagen */
+.container_img {
+    margin-top: 20px;
+   
+  }
+
+  /* Imagen */
+.img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* Nombre del Pokémon */
+  .name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+  }
+
+  /* Tipo del Pokémon */
+.type {
+    font-size: 16px;
+    color: #666;
+    margin-top: 8px;
+  }
+  
+  /* Contenedor de información adicional */
+  .container_info {
+    margin-top: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    background-color: #fff;
+  }
+  
+  /* Información adicional */
+  .info {
+    font-size: 16px;
+    color: #333;
+  }
+
+
+
+  /* Estilos para las estadísticas, como HP, Ataque, Defensa y Movimientos */
+.container_span_hd {
+    margin-top: 10px;
+  }
+  
+  .span_hp,
+  .span_ad,
+  .span_mov {
+    font-weight: bold;
+    color: #007bff;
+    margin-right: 10px;
+  }
+  

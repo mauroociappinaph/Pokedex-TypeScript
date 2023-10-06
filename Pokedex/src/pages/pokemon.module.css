@@ -18,7 +18,7 @@
   
   /* Botón de regreso */
   .button {
-    background-color: #007bff;
+    background-color: rgb(220, 20, 60);
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -47,8 +47,8 @@
     margin: 20px auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: 100%; /* Haz que la tarjeta ocupe todo el ancho */
-    max-width: 450px; /* Establece un ancho máximo para tabletas */
-    max-height: 550px;
+    max-width: 550px; /* Establece un ancho máximo para tabletas */
+    max-height: 650px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -63,7 +63,7 @@
   
   /* Imagen */
   .img {
-    max-width: 100%;
+    max-width: 300%;
     height: auto;
     border-radius: 8px;
   }
@@ -81,12 +81,13 @@
     font-size: 16px;
     color: #666;
     margin-top: 8px;
+    
   }
   
   /* Contenedor de información adicional */
   .container_info {
     margin-top: 20px;
-    text-align: left;
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -99,6 +100,8 @@
   .info {
     font-size: 16px;
     color: #333;
+    display: flex;
+    gap: 20px;
   }
   
   /* Estilos para las estadísticas, como HP, Ataque, Defensa y Movimientos */
@@ -106,11 +109,20 @@
     margin-top: 10px;
   }
   
+  .container_span_ad{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+
+  }
+
   .span_hp,
-  .span_ad,
-  .span_mov {
+  .span_ad {
     font-weight: bold;
-    color: #007bff;
+    color: rgb(220, 20, 60);
     margin-right: 10px;
   }
   
@@ -140,5 +152,49 @@
     }
   
     /* Agrega otras modificaciones según sea necesario */
+  }
+  
+
+  /* Estilos mejorados */
+.info_row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .info_label {
+    font-weight: bold;
+    color: white;
+    margin-bottom: 8px;
+  }
+  
+  .info_value {
+    font-size: 18px;
+    color: white;
+    margin-top: 4px;
+  }
+  
+  /* Estilos para tabletas y dispositivos móviles */
+  @media (max-width: 768px) {
+    .info_row {
+      padding: 16px;
+    }
+  
+    .info_label {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+  
+    .info_value {
+      font-size: 16px;
+      margin-top: 2px;
+    }
   }
   
